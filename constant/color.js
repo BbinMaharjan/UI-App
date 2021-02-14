@@ -1,7 +1,7 @@
 const Colors = {
-  lightGray: "",
-  lightRed: "#ff5949",
-  lightYellow: "#ebad48",
+  lightGray: "#515255",
+  lightRed: "#fb385b",
+  lightYellow: "#f9c601",
 };
 
 export default Colors;
