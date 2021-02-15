@@ -1,6 +1,6 @@
 import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
-import { Ionicons, AntDesign } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 import Color from "../constant/color";
 const Navbar = () => {
   return (
@@ -38,6 +38,25 @@ const Menulist = (props) => {
     </View>
   );
 };
+const ListName = (props) => {
+  return (
+    <View style={styles.menucolum}>
+      <View style={styles.icontxt}>
+        <Ionicons name={props.icon} size={50} color="red" />
+      </View>
+      <Text style={styles.txt}>{props.txt}</Text>
+    </View>
+  );
+};
+const CardView = (props) => {
+  return (
+    <View style={{ ...styles.CardView, backgroundColor: props.color }}>
+      <Text style={{ color: "white", fontSize: 20 }}>{props.title}</Text>
+      <Image source={props.imagesource} style={styles.image} />
+      <Text style={{ color: "white" }}>{props.amount}</Text>
+    </View>
+  );
+};
 const styles = StyleSheet.create({
   navbar: {
     justifyContent: "flex-start",
@@ -55,7 +74,6 @@ const styles = StyleSheet.create({
   },
   image: {
     flex: 1,
-    backgroundColor: "white",
     width: 100,
     height: 100,
     borderRadius: 50,
@@ -85,9 +103,35 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     marginRight: 20,
   },
+  txt: {
+    margin: 5,
+  },
   amount: {
     padding: 5,
   },
+  menucolum: {
+    flex: 1,
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "space-around",
+  },
+
+  icontxt: {
+    width: 75,
+    height: 75,
+    borderRadius: 50,
+    backgroundColor: Color.lightesGray,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  CardView: {
+    width: "48%",
+    height: 200,
+    borderRadius: 30,
+    padding: 20,
+    alignItems: "flex-start",
+    justifyContent: "center",
+  },
 });
 
-export { Navbar, Menubar, Menulist };
+export { Navbar, Menubar, Menulist, ListName, CardView };
