@@ -1,11 +1,11 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
 import {
   StyleSheet,
-  Text,
   ScrollView,
+  Text,
   ImageBackground,
-  View,
+  SectionList,
+  FlatList,
 } from "react-native";
 import { FOODS } from "./data/data";
 
